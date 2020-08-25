@@ -19,7 +19,7 @@ class AddPost extends Component {
       <form onSubmit={this.onSubmit}>
         <h2 className="add-header">Add Post</h2>
         <input placeholder="Name" ref={name => (this.name = name)} />
-        <textarea placeholder="Post" ref={text => (this.post = this.post)} />
+        <textarea placeholder="Post" ref={post => (this.post = post)} />
         <br></br>
         <button className="add">Add</button>
       </form>

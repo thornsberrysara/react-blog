@@ -3,6 +3,7 @@ import "./App.css";
 import Post from "./Post";
 import AddPost from "./AddPost";
 import Nav from "./Nav";
+import Profile from "./Profile";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const posts = [
@@ -77,7 +78,8 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Nav />
+            <Nav />
+            <Route exact path="/">
               <AddPost onAdd={this.onAdd} />
               {this.state.posts.map(post => {
                 return (
@@ -89,6 +91,10 @@ class App extends Component {
                   />
                 );
               })}
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
         </Router>
       </div>
     );
