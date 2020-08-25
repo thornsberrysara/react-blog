@@ -10,17 +10,17 @@ const posts = [
   {
     id: 1,
     name: "Ricky Bobby",
-    post: "If you ain't first, you're last!"
+    content: "If you ain't first, you're last!"
   },
   {
     id: 2,
     name: "Cal Naughton",
-    post: "Shake 'n Bake!"
+    content: "Shake 'n Bake!"
   },
   {
     id: 3,
     name: "Texas Ranger",
-    post: "Chip, I'm gonna come at you like a spider monkey!"
+    content: "Chip, I'm gonna come at you like a spider monkey!"
   }
 ];
 
@@ -45,11 +45,11 @@ class App extends Component {
     return this.state.posts;
   }
 
-  onAdd(name, post) {
+  onAdd(name, content) {
     const posts = this.getPosts();
     posts.push({
       name,
-      post
+      content
     });
     this.setState({ posts });
   }
@@ -62,12 +62,12 @@ class App extends Component {
     this.setState({ posts: filteredPosts });
   }
 
-  onEditSubmit(name, post, prevName) {
+  onEditSubmit(name, content, prevName) {
     let posts = this.getPosts();
     posts = posts.map(post => {
       if (post.name === prevName) {
         post.name = name;
-        post.post = post;
+        post.content = content;
       }
       return post;
     });

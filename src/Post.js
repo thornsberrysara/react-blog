@@ -25,7 +25,7 @@ class Post extends Component {
     event.preventDefault();
     this.props.onEditSubmit(
       this.name.value,
-      this.post.value,
+      this.content.value,
       this.props.name
     );
 
@@ -33,7 +33,7 @@ class Post extends Component {
   }
 
   render() {
-    const { name, post } = this.props;
+    const { name, content } = this.props;
     return (
       <div className="container">
         {this.state.isEdit ? (
@@ -46,8 +46,8 @@ class Post extends Component {
             />
             <textarea
               placeholder="Post"
-              ref={post => (this.post = post)}
-              defaultValue={post}
+              ref={content => (this.content = content)}
+              defaultValue={content}
             />
             <br></br>
             <button>Save</button>
@@ -56,7 +56,7 @@ class Post extends Component {
           <div className="content">
           <div className="container">
             <h2>{name}</h2>
-            <p>{post}</p>
+            <p>{content}</p>
             <button onClick={this.onEdit}>Edit</button>
             <button onClick={this.onDelete}>Delete</button>
           </div>

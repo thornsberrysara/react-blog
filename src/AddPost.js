@@ -8,9 +8,9 @@ class AddPost extends Component {
   }
   onSubmit(event) {
     event.preventDefault();
-    this.props.onAdd(this.name.value, this.post.value);
+    this.props.onAdd(this.name.value, this.content.value);
     this.name.value = "";
-    this.post.value = "";
+    this.content.value = "";
   }
 
   render() {
@@ -19,7 +19,7 @@ class AddPost extends Component {
       <form onSubmit={this.onSubmit}>
         <h2 className="add-header">Add Post</h2>
         <input placeholder="Name" ref={name => (this.name = name)} />
-        <textarea placeholder="Post" ref={post => (this.post = post)} />
+        <textarea placeholder="Post" ref={content => (this.content = content)} />
         <br></br>
         <button className="add">Add</button>
       </form>
